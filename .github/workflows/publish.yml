@@ -29,7 +29,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v4
         with:
           version: 9.1.0
 
@@ -39,7 +39,7 @@ jobs:
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
       - name: Setup pnpm cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ${{ env.STORE_PATH }}
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
@@ -76,12 +76,12 @@ jobs:
 
       - name: Create GitHub Release (if workflow_dispatch and Node 18)
         if: ${{ github.event_name == 'workflow_dispatch' && matrix.node-version == '18.x' }}
-        uses: actions/create-release@v1
+        uses: softprops/action-gh-release@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: v${{ github.event.inputs.version || 'auto' }}
-          release_name: Release v${{ github.event.inputs.version || 'auto' }}
+          name: Release v${{ github.event.inputs.version || 'auto' }}
           body: |
             Automated release of HashiCorp Vault N8N Node
 

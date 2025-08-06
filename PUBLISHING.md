@@ -190,6 +190,7 @@ npm view n8n-nodes-hashicorp-vault versions --json
 2. Verify secrets are set correctly
 3. Ensure package.json version is unique
 4. Check for linting/build errors
+5. Ensure actions are using supported versions (v4+ for artifact actions)
 
 ### Recovery Procedures
 
