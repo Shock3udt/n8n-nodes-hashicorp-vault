@@ -36,12 +36,12 @@ hashicorp_n8n_node/
 
 1. **Install dependencies:**
    ```bash
-   npm install
+   pnpm install
    ```
 
 2. **Build the project:**
    ```bash
-   npm run build
+   pnpm run build
    ```
 
 3. **Link for local development:**
@@ -56,12 +56,12 @@ hashicorp_n8n_node/
 
 ## Development Commands
 
-- `npm run build` - Build the project
-- `npm run dev` - Build in watch mode
-- `npm run lint` - Run ESLint
-- `npm run lintfix` - Fix ESLint issues
-- `npm run format` - Format code with Prettier
-- `npm run test` - Run tests
+- `pnpm run build` - Build the project
+- `pnpm run dev` - Build in watch mode
+- `pnpm run lint` - Run ESLint
+- `pnpm run lintfix` - Fix ESLint issues
+- `pnpm run format` - Format code with Prettier
+- `pnpm run test` - Run tests
 
 ## Publishing
 
